@@ -1,11 +1,12 @@
 import gradio as gr
 from huggingface_hub import InferenceClient
+import os
 
 
 
 client = InferenceClient(
-    token=hf_token.token, 
-    model="Falconsai/nsfw_image_detection"
+    provider="hf-inference",
+    api_key=os.getenv("HF_TOKEN"),
 )
 
 def classify_image(image):
@@ -17,7 +18,7 @@ def classify_image(image):
     
     try:
         # Use the NSFW classification model
-        output = client.image_classification(image)
+        output = client.image_classification(image, model="Falconsai/nsfw_image_detection")
         
         # Find the highest confidence prediction
         if output:
