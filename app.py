@@ -4,8 +4,8 @@ from huggingface_hub import InferenceClient
 
 
 client = InferenceClient(
-    provider="hf-inference",
-    token=hf_token.token,
+    token=hf_token.token, 
+    model="Falconsai/nsfw_image_detection"
 )
 
 def classify_image(image):
@@ -17,7 +17,7 @@ def classify_image(image):
     
     try:
         # Use the NSFW classification model
-        output = client.image_classification(image, model="Falconsai/nsfw_image_detection")
+        output = client.image_classification(image)
         
         # Find the highest confidence prediction
         if output:
