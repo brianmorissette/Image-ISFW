@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://brianmorissette:$HF_TOKEN@huggingface.co/spaces/brianmorissette/Image-ISFW main
+        run: git push https://brianmorissette:$HF_TOKEN@huggingface.co/spaces/brianmorissette/Image-ISFW.git main:main
