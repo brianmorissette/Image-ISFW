@@ -46,7 +46,7 @@ demo = gr.Interface(
     fn=classify_image,
     inputs=gr.Image(type="filepath"),
     outputs="text",
-    title="NSFW Image Classification",
+    title="NSFW Image Classification (Github Action works!)",
     description="Upload an image to check if it's safe for work or not safe for work"
 )
 
