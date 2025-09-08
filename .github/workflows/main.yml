@@ -1,4 +1,4 @@
-name: Sync to Hugging Face Space
+name: Sync to Hugging Face hub
 on:
   push:
     branches: [main]
@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      - name: Push to Hugging Face Space
+      - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: git push https://brianmorissette:$HF_TOKEN@huggingface.co/spaces/brianmorissette/Image-ISFW main
